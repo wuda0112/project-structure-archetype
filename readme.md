@@ -6,7 +6,7 @@
 - 做到方便的扩展成spring cloud项目。由于使用的是spring boot方式，因此只要你熟悉和搭建了spring cloud环境，这些单个的spring boot项目，进过一些相对简单的改造后，很容易就加入到spring cloud中。根据我的亲身经历，这绝对不是问题。
 
 # quick start
-- 多个微服务之间一般都会有公共内容，因此我把这些公共内容放到了另外一个项目common中，所以先把这个项目下载下来，然后maven clean install，把jar包安装到本地，不然会找不到依赖，除了这个依赖，其他都可以从中心仓库下载
+- 多个微服务之间一般都会有公共内容，因此我把这些公共内容放到了另外一个项目[common](https://github.com/wuda0112/project-common)中，所以先把这个项目下载下来，然后maven clean install，把jar包安装到本地，不然会找不到依赖，除了这个依赖，其他都可以从中心仓库下载
 
 
 - **运行RESTful和MVC**
