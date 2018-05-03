@@ -14,7 +14,7 @@
     <groupId>com.wuda</groupId>
     <artifactId>project-structure-archetype</artifactId>
     <packaging>pom</packaging>
-    <version>${application.version}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <description>定义一种组织项目结构的样例.可以同时按照RESTful,MVC,RPC方式运行.</description>
 
     <modules>
