@@ -6,7 +6,7 @@
 - 做到方便的扩展成spring cloud项目。由于使用的是spring boot方式，因此只要你熟悉和搭建了spring cloud环境，这些单个的spring boot项目，进过一些相对简单的改造后，很容易就加入到spring cloud中。根据我的亲身经历，这绝对不是问题。
 
 # quick start
-- 多个微服务之间一般都会有公共内容，因此我把这些公共内容放到了另外一个项目[common](https://github.com/wuda0112/project-common)中，所以先把这个项目下载下来，然后maven clean install，把jar包安装到本地，不然会找不到依赖，除了这个依赖，其他都可以从中心仓库下载
+- 多个微服务之间一般都会有公共内容，因此我把这些公共内容放到了另外一个项目[project-common](https://github.com/wuda0112/project-common)中，所以先把这个项目下载下来，然后maven clean install，把jar包安装到本地，不然会找不到依赖，除了这个依赖，其他都可以从中心仓库下载
 
 
 - **运行RESTful和MVC**
@@ -28,6 +28,10 @@ http://localhost:8080/swagger-ui.html
 
 # 说明
 项目完全按照spring boot项目方式运行，因此各种配置，比如tomcat的端口,数据库datasource等的配置，完全就是spring boot方式配置
+
+# uml设计图
+
+![image](https://github.com/wuda0112/project-structure-archetype/blob/master/diagram.png)
 
 # UI,用户界面
 - web
@@ -81,4 +85,4 @@ http://localhost:8080/swagger-ui.html
 - - 对server端提供的服务做一个整合，做到调用方引入后，直接通过方法调用即可。当然，服务端的IP地址等信息还是要配置的，但仅仅只是配置这些即可。剩下的就是把精力放在RPC框架本身的调优。
 
 # 公共模块
-多个微服务之间，绝大部分都会有公共信息，因此这些公共信息在项目[common](https://github.com/wuda0112/project-common)中。
+多个微服务之间，绝大部分都会有公共信息，因此这些公共信息在项目[project-common](https://github.com/wuda0112/project-common)中。
