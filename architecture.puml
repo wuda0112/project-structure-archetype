@@ -1,0 +1,46 @@
+@startuml
+actor android [
+    android user
+]
+actor apple [
+    apple user
+]
+actor browser
+agent server [
+    web server
+]
+agent rpc_client [
+    rpc client
+]
+database db
+queue queue
+cloud foo  {
+    artifact rpc_server [
+        rpc server
+    ]
+    artifact RESTful
+    artifact mvc
+}
+artifact service_api [
+     service api
+]
+artifact service_impl [
+    service impl
+]
+artifact lang
+android -- server
+apple -- server
+browser -- server
+server -- mvc : VO
+rpc_client -- rpc_server : VO
+server -- RESTful : VO
+rpc_server -- service_api : DTO
+RESTful -- service_api : DTO
+mvc -- service_api : DTO
+service_api -- service_impl
+service_impl -- lang : DTO
+lang -- db : PO
+service_impl ~~ db : PO
+lang -- queue : PO
+service_impl ~~ queue : PO
+@enduml

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>project-structure-archetype</artifactId>
+        <groupId>com.wuda</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>service-impl</artifactId>
+
+    <description>正如名字一样,表示service层的实现.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.wuda</groupId>
+            <artifactId>service-model-api</artifactId>
+            <version>${application.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wuda</groupId>
+            <artifactId>dao-mysql</artifactId>
+            <version>${application.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wuda</groupId>
+            <artifactId>lang</artifactId>
+            <version>${application.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
