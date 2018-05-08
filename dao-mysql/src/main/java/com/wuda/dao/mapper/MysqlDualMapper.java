@@ -11,6 +11,11 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface MysqlDualMapper {
 
+    /**
+     * 执行select 1语句.
+     *
+     * @return 数字1
+     */
     @Select("select 1 from dual")
     Integer ping();
 }

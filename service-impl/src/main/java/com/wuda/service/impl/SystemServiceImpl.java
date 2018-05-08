@@ -7,13 +7,16 @@ import com.wuda.service.model.PingDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service(value = SystemServiceImpl.name)
+/**
+ * @author wuda
+ */
+@Service(value = SystemServiceImpl.NAME)
 public class SystemServiceImpl implements SystemService {
 
     /**
      * my bean name.
      */
-    public final static String name = "systemService";
+    public final static String NAME = "systemService";
 
     @Autowired
     private MysqlDualMapper mysqlDualMapper;
@@ -21,6 +24,7 @@ public class SystemServiceImpl implements SystemService {
     @Autowired
     private CoreProperty coreProperty;
 
+    @Override
     public PingDto ping() {
         PingDto info = new PingDto();
         info.setMessage("app ping ok");
@@ -28,6 +32,7 @@ public class SystemServiceImpl implements SystemService {
         return info;
     }
 
+    @Override
     public PingDto pingMysql() {
         long start = System.currentTimeMillis();
         mysqlDualMapper.ping();

@@ -6,6 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 例子来自于dubbo官网.
+ *
+ * @author wuda
  */
 public class DubboConsumer {
 

@@ -4,6 +4,8 @@ import com.wuda.service.model.PingDto;
 
 /**
  * 系统服务类.方便了解当前系统的各种元数据和运行时状态.
+ *
+ * @author wuda
  */
 public interface SystemService {
 

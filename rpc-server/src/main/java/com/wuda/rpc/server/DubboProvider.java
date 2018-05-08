@@ -12,6 +12,8 @@ import java.io.IOException;
 
 /**
  * 例子来自于dubbo官网,稍微改造了一下,以spring boot方式运行.
+ *
+ * @author wuda
  */
 @EnableConfigurationProperties
 @EnableAutoConfiguration

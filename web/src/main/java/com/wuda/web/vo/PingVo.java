@@ -7,6 +7,9 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @author wuda
+ */
 @Getter
 @Setter
 @ApiModel(description = "ping返回内容")

@@ -8,6 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
+/**
+ * 应用启动类.
+ *
+ * @author wuda
+ */
 @SpringBootApplication
 @EnableAutoConfiguration
 @Import({Swagger2Configuration.class})
