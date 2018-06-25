@@ -1,8 +1,9 @@
-package com.wuda.web.controller;
+package com.wuda.web.mvc.controller;
 
 import com.wuda.service.api.SystemService;
-import com.wuda.service.model.PingDto;
-import com.wuda.web.model.PingVo;
+import com.wuda.service.model.PingDTO;
+import com.wuda.web.model.constant.PathConstant;
+import com.wuda.web.model.response.PingResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,25 +16,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author wuda
  */
 @Controller
-@RequestMapping(path = "/controller/system/")
 public class SystemController {
 
     @Autowired
     private SystemService systemService;
 
-    @RequestMapping(path = "ping", method = RequestMethod.GET)
+    @RequestMapping(path = PathConstant.MVC_SYSTEM_CONTROLLER_PING
+            , method = RequestMethod.GET)
     public String ping(Model model) {
-        PingDto pingDto = systemService.ping();
-        PingVo pingVo = PingVo.from(pingDto);
-        model.addAttribute("pingVo", pingVo);
+        PingDTO pingDTO = systemService.ping();
+        PingResponse pingResponse = PingResponse.from(pingDTO);
+        model.addAttribute("pingResponse", pingResponse);
         return "system/ping";
     }
 
-    @RequestMapping(path = "ping/mysql", method = RequestMethod.GET)
+    @RequestMapping(path = PathConstant.MVC_SYSTEM_CONTROLLER_PING_MYSQL
+            , method = RequestMethod.GET)
     public String pingMysql(Model model) {
-        PingDto pingDto = systemService.pingMysql();
-        PingVo pingVo = PingVo.from(pingDto);
-        model.addAttribute("pingVo", pingVo);
+        PingDTO pingDTO = systemService.pingMysql();
+        PingResponse pingResponse = PingResponse.from(pingDTO);
+        model.addAttribute("pingResponse", pingResponse);
         return "system/ping";
     }
 

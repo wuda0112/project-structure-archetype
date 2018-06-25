@@ -21,26 +21,30 @@ cloud foo  {
     artifact RESTful
     artifact mvc
 }
+artifact RESTful_client [
+    RESTful client
+]
 artifact service_api [
      service api
 ]
 artifact service_impl [
     service impl
 ]
+artifact dao
 artifact lang
 android -- server
 apple -- server
 browser -- server
-server -- mvc : VO
-rpc_client -- rpc_server : VO
-server -- RESTful : VO
+server -- mvc : request/response
+rpc_client -- rpc_server : param/DTO
+server -- RESTful : request/response
+RESTful_client -- RESTful
 rpc_server -- service_api : DTO
 RESTful -- service_api : DTO
 mvc -- service_api : DTO
 service_api -- service_impl
-service_impl -- lang : DTO
-lang -- db : PO
-service_impl ~~ db : PO
-lang -- queue : PO
-service_impl ~~ queue : PO
+service_impl -- lang
+service_impl -- dao
+dao -- db
+dao -- queue
 @enduml

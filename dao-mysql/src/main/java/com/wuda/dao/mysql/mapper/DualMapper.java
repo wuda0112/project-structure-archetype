@@ -1,4 +1,4 @@
-package com.wuda.dao.mapper;
+package com.wuda.dao.mysql.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

@@ -10,28 +10,32 @@
         <version>2.0.0</version>
     </parent>
 
-    <artifactId>web</artifactId>
+    <artifactId>mvc-server</artifactId>
 
-    <description>包含web端的MVC和RESTful</description>
+    <description>web端的MVC</description>
 
     <dependencies>
 
         <dependency>
-            <groupId>com.wuda</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>service-impl</artifactId>
-            <version>${application.version}</version>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>web-model</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring.boot.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>${spring.boot.version}</version>
         </dependency>
 
         <dependency>

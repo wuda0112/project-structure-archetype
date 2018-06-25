@@ -5,7 +5,7 @@
     <parent>
         <artifactId>project-structure-archetype</artifactId>
         <groupId>com.wuda</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>2.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,19 +15,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.wuda</groupId>
-            <artifactId>service-model-api</artifactId>
-            <version>${application.version}</version>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>service-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.wuda</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>dao-mysql</artifactId>
-            <version>${application.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.wuda</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>lang</artifactId>
-            <version>${application.version}</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

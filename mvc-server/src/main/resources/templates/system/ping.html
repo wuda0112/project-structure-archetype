@@ -5,6 +5,8 @@
     <title>system ping info</title>
 </head>
 <body>
-<span th:text="${pingVo.message}">show ping message</span>
+    <span th:text="${pingResponse.success}">ping success ?</span>
+    <span th:text="${pingResponse.message}">ping message</span>
+    <span th:text="${pingResponse.time}">ping time cost</span>
 </body>
 </html>
