@@ -9,26 +9,22 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service-impl</artifactId>
+    <artifactId>web-model</artifactId>
 
-    <description>正如名字一样,表示service层的实现.</description>
+    <description>为RESTFul和mvc提供model</description>
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>service-api</artifactId>
-            <version>${project.version}</version>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>dao-mysql</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>lang</artifactId>
+            <artifactId>service-model</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
+
 
 </project>

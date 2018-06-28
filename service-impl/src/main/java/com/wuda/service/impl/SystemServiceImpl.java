@@ -1,9 +1,10 @@
 package com.wuda.service.impl;
 
 import com.wuda.common.configuration.CoreProperty;
-import com.wuda.dao.mapper.MysqlDualMapper;
+import com.wuda.dao.mysql.dao.DualDAO;
+import com.wuda.dao.mysql.response.PingDO;
 import com.wuda.service.api.SystemService;
-import com.wuda.service.model.PingDto;
+import com.wuda.service.model.PingDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,28 +20,29 @@ public class SystemServiceImpl implements SystemService {
     public final static String NAME = "systemService";
 
     @Autowired
-    private MysqlDualMapper mysqlDualMapper;
+    private DualDAO dualDAO;
 
     @Autowired
     private CoreProperty coreProperty;
 
     @Override
-    public PingDto ping() {
-        PingDto info = new PingDto();
+    public PingDTO ping() {
+        PingDTO info = new PingDTO();
+        info.setSuccess(true);
         info.setMessage("app ping ok");
-        info.setCopyright(coreProperty.getCopyright());
         return info;
     }
 
     @Override
-    public PingDto pingMysql() {
+    public PingDTO pingMysql() {
         long start = System.currentTimeMillis();
-        mysqlDualMapper.ping();
+        PingDO pingDO = dualDAO.ping();
         long end = System.currentTimeMillis();
         long time = end - start;
-        PingDto info = new PingDto();
-        info.setMessage("mysql ping ok,time=" + (time == 0 ? 1 : time) + "ms");
-        info.setCopyright(coreProperty.getCopyright());
+        PingDTO info = new PingDTO();
+        info.setSuccess(pingDO.isSuccess());
+        info.setMessage(pingDO.getMessage());
+        info.setTime(time);
         return info;
     }
 }

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>system ping info</title>
+</head>
+<body>
+    <span th:text="${pingResponse.success}">ping success ?</span>
+    <span th:text="${pingResponse.message}">ping message</span>
+    <span th:text="${pingResponse.time}">ping time cost</span>
+</body>
+</html>

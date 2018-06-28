@@ -9,9 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>lang</artifactId>
-
-    <description>项目中基础类.</description>
+    <artifactId>service-model</artifactId>
 
 
 </project>
