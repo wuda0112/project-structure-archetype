@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Select;
  * @author wuda
  */
 @Mapper
-public interface DualMapper {
+public interface SystemMapper {
 
     /**
      * 执行select 1语句.

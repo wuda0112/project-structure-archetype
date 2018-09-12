@@ -1,7 +1,6 @@
 package com.wuda.web.rest.server.controller;
 
-import com.wuda.common.lang.web.Response;
-import com.wuda.common.lang.web.ResponseCode;
+import com.wuda.common.lang.response.Result;
 import com.wuda.service.api.SystemService;
 import com.wuda.service.model.PingDTO;
 import com.wuda.web.model.constant.PathConstant;
@@ -24,23 +23,17 @@ public class SystemController {
 
     @RequestMapping(path = PathConstant.REST_SYSTEM_CONTROLLER_PING
             , method = RequestMethod.GET)
-    public Response<PingResponse> ping() {
-        PingDTO pingDTO = systemService.ping();
-        PingResponse pingResponse = PingResponse.from(pingDTO);
-        Response<PingResponse> response = new Response<>();
-        response.setResponseCode(ResponseCode.OK);
-        response.setContent(pingResponse);
-        return response;
+    public Result<PingResponse> ping() {
+        Result<PingDTO> pingDTOResult = systemService.ping();
+        PingResponse pingResponse = PingResponse.from(pingDTOResult.getContent());
+        return new Result<>(pingDTOResult.getResultDesc(), pingResponse);
     }
 
     @RequestMapping(path = PathConstant.REST_SYSTEM_CONTROLLER_PING_MYSQL
             , method = RequestMethod.GET)
-    public Response<PingResponse> pingMysql() {
-        PingDTO pingDTO = systemService.pingMysql();
-        PingResponse pingResponse = PingResponse.from(pingDTO);
-        Response<PingResponse> response = new Response<>();
-        response.setResponseCode(ResponseCode.OK);
-        response.setContent(pingResponse);
-        return response;
+    public Result<PingResponse> pingMysql() {
+        Result<PingDTO> pingDTOResult = systemService.pingMysql();
+        PingResponse pingResponse = PingResponse.from(pingDTOResult.getContent());
+        return new Result<>(pingDTOResult.getResultDesc(), pingResponse);
     }
 }

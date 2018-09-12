@@ -1,6 +1,6 @@
 package com.wuda.web.rest.client.api;
 
-import com.wuda.common.lang.web.Response;
+import com.wuda.common.lang.response.Result;
 import com.wuda.web.model.response.PingResponse;
 import org.junit.Test;
 
@@ -14,8 +14,7 @@ public class SystemClientTest {
     @Test
     public void ping() {
         SystemClient client = SystemClient.connect();
-        Response<PingResponse> response = client.ping();
-        System.out.println("response code:" + response.getResponseCode());
-        System.out.println(response.getContent().toString());
+        Result<PingResponse> result = client.ping();
+        System.out.println(result);
     }
 }

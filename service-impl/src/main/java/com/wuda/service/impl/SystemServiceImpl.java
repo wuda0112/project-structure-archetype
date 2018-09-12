@@ -1,8 +1,9 @@
 package com.wuda.service.impl;
 
 import com.wuda.common.configuration.CoreProperty;
-import com.wuda.dao.mysql.dao.DualDAO;
-import com.wuda.dao.mysql.response.PingDO;
+import com.wuda.common.lang.response.CommonResultDesc;
+import com.wuda.common.lang.response.Result;
+import com.wuda.dao.mysql.mapper.SystemMapper;
 import com.wuda.service.api.SystemService;
 import com.wuda.service.model.PingDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,38 +12,44 @@ import org.springframework.stereotype.Service;
 /**
  * @author wuda
  */
-@Service(value = SystemServiceImpl.NAME)
+@Service(value = SystemServiceImpl.BEAN_NAME)
 public class SystemServiceImpl implements SystemService {
 
-    /**
-     * my bean name.
-     */
-    public final static String NAME = "systemService";
+    public final static String BEAN_NAME = "systemService";
 
     @Autowired
-    private DualDAO dualDAO;
+    private SystemMapper systemMapper;
 
     @Autowired
     private CoreProperty coreProperty;
 
     @Override
-    public PingDTO ping() {
+    public Result<PingDTO> ping() {
         PingDTO info = new PingDTO();
         info.setSuccess(true);
         info.setMessage("app ping ok");
-        return info;
+        return new Result<>(CommonResultDesc.OK, info);
     }
 
     @Override
-    public PingDTO pingMysql() {
+    public Result<PingDTO> pingMysql() {
+        boolean success;
+        String message;
         long start = System.currentTimeMillis();
-        PingDO pingDO = dualDAO.ping();
+        try {
+            systemMapper.ping();
+            success = true;
+            message = "ping mysql ok!";
+        } catch (Exception e) {
+            success = false;
+            message = "ping mysql failed ! brief message is:" + e.getMessage();
+        }
         long end = System.currentTimeMillis();
         long time = end - start;
         PingDTO info = new PingDTO();
-        info.setSuccess(pingDO.isSuccess());
-        info.setMessage(pingDO.getMessage());
+        info.setSuccess(success);
+        info.setMessage(message);
         info.setTime(time);
-        return info;
+        return new Result<>(success ? CommonResultDesc.OK : CommonResultDesc.FAIL, info);
     }
 }

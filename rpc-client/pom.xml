@@ -23,7 +23,13 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>service-model-api</artifactId>
+            <artifactId>service-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>service-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 

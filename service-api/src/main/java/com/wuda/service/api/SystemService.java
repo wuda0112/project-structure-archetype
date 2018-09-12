@@ -1,5 +1,6 @@
 package com.wuda.service.api;
 
+import com.wuda.common.lang.response.Result;
 import com.wuda.service.model.PingDTO;
 
 /**
@@ -14,13 +15,13 @@ public interface SystemService {
      *
      * @return ping info
      */
-    PingDTO ping();
+    Result<PingDTO> ping();
 
     /**
      * 在mysql中执行查询语句,以达到ping的效果.
      *
      * @return mysql ping info
      */
-    PingDTO pingMysql();
+    Result<PingDTO> pingMysql();
 
 }

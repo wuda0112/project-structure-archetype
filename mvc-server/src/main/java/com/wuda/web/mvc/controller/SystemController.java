@@ -1,5 +1,6 @@
 package com.wuda.web.mvc.controller;
 
+import com.wuda.common.lang.response.Result;
 import com.wuda.service.api.SystemService;
 import com.wuda.service.model.PingDTO;
 import com.wuda.web.model.constant.PathConstant;
@@ -24,8 +25,8 @@ public class SystemController {
     @RequestMapping(path = PathConstant.MVC_SYSTEM_CONTROLLER_PING
             , method = RequestMethod.GET)
     public String ping(Model model) {
-        PingDTO pingDTO = systemService.ping();
-        PingResponse pingResponse = PingResponse.from(pingDTO);
+        Result<PingDTO> pingDTOResult = systemService.ping();
+        PingResponse pingResponse = PingResponse.from(pingDTOResult.getContent());
         model.addAttribute("pingResponse", pingResponse);
         return "system/ping";
     }
@@ -33,8 +34,8 @@ public class SystemController {
     @RequestMapping(path = PathConstant.MVC_SYSTEM_CONTROLLER_PING_MYSQL
             , method = RequestMethod.GET)
     public String pingMysql(Model model) {
-        PingDTO pingDTO = systemService.pingMysql();
-        PingResponse pingResponse = PingResponse.from(pingDTO);
+        Result<PingDTO> pingDTOResult = systemService.pingMysql();
+        PingResponse pingResponse = PingResponse.from(pingDTOResult.getContent());
         model.addAttribute("pingResponse", pingResponse);
         return "system/ping";
     }

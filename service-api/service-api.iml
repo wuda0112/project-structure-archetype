@@ -37,6 +37,7 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.0.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.wuda:common-lang:2.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.retry:spring-retry:1.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.wuda:common-configuration:2.0.0" level="project" />
   </component>
 </module>

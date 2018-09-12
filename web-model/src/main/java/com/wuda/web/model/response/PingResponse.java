@@ -1,12 +1,13 @@
 package com.wuda.web.model.response;
 
-import com.wuda.common.lang.web.Vo;
 import com.wuda.service.model.PingDTO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.io.Serializable;
 
 /**
  * ping返回内容.
@@ -17,7 +18,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @ApiModel(description = "ping返回内容")
-public class PingResponse implements Vo {
+public class PingResponse implements Serializable {
 
     @ApiModelProperty(notes = "成功或者失败")
     private boolean success;

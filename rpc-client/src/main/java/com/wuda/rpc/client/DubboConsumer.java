@@ -1,7 +1,8 @@
 package com.wuda.rpc.client;
 
+import com.wuda.common.lang.response.Result;
 import com.wuda.service.api.SystemService;
-import com.wuda.service.model.PingDto;
+import com.wuda.service.model.PingDTO;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -18,8 +19,8 @@ public class DubboConsumer {
         // obtain proxy object for remote invocation
         SystemService systemService = (SystemService) context.getBean("systemService");
         // execute remote invocation
-        PingDto pingDto = systemService.ping();
+        Result<PingDTO> pingDTOResult = systemService.ping();
         // show the result
-        System.out.println(pingDto);
+        System.out.println(pingDTOResult);
     }
 }
