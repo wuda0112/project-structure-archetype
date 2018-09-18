@@ -21,6 +21,7 @@ public class SystemController {
     @Autowired
     private SystemService systemService;
 
+
     @RequestMapping(path = PathConstant.REST_SYSTEM_CONTROLLER_PING
             , method = RequestMethod.GET)
     public Result<PingResponse> ping() {

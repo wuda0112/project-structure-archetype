@@ -6,37 +6,35 @@
 - 做到方便的扩展成spring cloud项目。由于使用的是spring boot方式，因此只要你熟悉和搭建了spring cloud环境，这些单个的spring boot项目，进过一些相对简单的改造后，很容易就加入到spring cloud中。根据我的亲身经历，这绝对不是问题。
 
 # quick start
-- 多个微服务之间一般都会有公共内容，因此我把这些公共内容放到了另外一个项目[project-common](https://github.com/wuda0112/project-common)中，所以先把这个项目下载下来，然后maven clean install，把jar包安装到本地，不然会找不到依赖，除了这个依赖，其他都可以从中心仓库下载
-
-
-- **运行RESTful**
-- - 下载源码到你本地
-- - 运行com.wuda.web.rest.server.RestApplication，启动服务RESTFul服务
-- - 在浏览器中输入以下地址，即可看见暴露的接口
+1. 下载[project-common](https://github.com/wuda0112/project-common)项目
 ```
-http://localhost:8080/swagger-ui.html
+git clone https://github.com/wuda0112/project-common.git
 ```
-- - 或者使用rest-client远程调用，运行com.wuda.web.rest.client.api.SystemClientTest,使用feign调用
-- - 如果调用**pingMysql**服务，必须先配置你的mysql datasource,默认是localhost:3306,配置文件在src/main/resources/application.properties
-
-- **运行MVC**
-- - 下载源码到你本地
-- - 运行com.wuda.web.mvc.MvcApplication,启动mvc服务
-- - 在浏览器中输入以下地址，即可看见暴露的接口
+然后 maven clean install
+2. 下载本项目
 ```
-http://localhost:8080/swagger-ui.html
+git clone https://github.com/wuda0112/project-structure-archetype.git
 ```
-- - 如果调用**pingMysql**服务，必须先配置你的mysql datasource,默认是localhost:3306,配置文件在src/main/resources/application.properties
 
+3. 运行 RESTful
+```
+服务端 : com.wuda.web.rest.server.RestApplication
+客户端 : com.wuda.web.rest.client.api.SystemClientTest
+```
 
-- **运行RPC**
-- - 下载源码到你本地
-- - 运行rpc-server模块的com.wuda.rpc.server.DubboProvider.java，启动rpc服务
-- - 运行rpc-client模块的com.wuda.rpc.client.DubboConsumer.java，调用rpc服务端
-- - 如果调用**pingMysql**服务，必须先配置你的mysql datasource,默认是localhost:3306,配置文件在src/main/resources/application.properties
+4. 运行 rpc
+```
+服务端 : com.wuda.rpc.server.DubboProvider
+客户端 : com.wuda.rpc.client.DubboConsumer
+```
+5. 运行 mvc
+```
+服务端 : com.wuda.web.mvc.MvcApplication
+浏览器输入 : http://localhost:8080/swagger-ui.html
+```
+6. 如果调用**pingMysql**服务，必须先配置你的mysql datasource,默认是localhost:3306,配置文件在src/main/resources/application.properties
 
-
-# 说明
+7. 说明
 项目完全按照spring boot项目方式运行，因此各种配置，比如tomcat的端口,数据库datasource等的配置，完全就是spring boot方式配置
 
 # uml设计图
@@ -91,55 +89,18 @@ http://localhost:8080/swagger-ui.html
 # 公共模块
 多个微服务之间，绝大部分都会有公共信息，因此这些公共信息在项目[project-common](https://github.com/wuda0112/project-common)中。
 
-# 自定义配置
-
-```
-core.copyright = null ; 版权
-```
-
-
 # 各层领域模型规约
 - 当参数较少时，尽量不用对象类型的参数，而是把各个参数列出来。
 - 对于这些领域对象，只能包含属性，getter/setter，toString,equals方法，
 方法中不能包含任何业务逻辑。
 
-- 3.1 RESTFul/mvc
-
-3.1.1 input: XxRequest。请求对象，由于各种web框架都习惯使用request关键字,因此这里以此关键字结尾。
-
-3.1.2 output: XxResponse。响应对象，由于各种web框架都习惯使用response关键字,因此这里以此关键字结尾。
-
-- 3.2 service
-
-3.2.1 input: XxParam。调用service层方法时，输入参数。
-
-3.2.2 output: XxDTO。Data Transfer Object，service层向外输出的对象。
-
-3.2.2.1 service层的DTO需要用Result包起来，Result里面包含了状态码信息.
-因为只有业务层才知道这次业务是否正常,如果不正常,又是怎样的异常状态和信息.
-
-- 3.3 dao
-
-- - 3.3.1 select
-
-3.3.1.1 input: XxQuery。查询方法的输入参数。
-
-3.3.1.2 output: XxDO。Data Object，查询方法输出的对象。
-
-- - 3.3.2 insert
-
-3.3.2.1 input: XxPO。Persistent Object，新增数据方法，新增的数据对象。
-
-3.3.2.2 output: int。数据库影响的行数。
-
-- - 3.3.3 update
-
-3.3.3.1 input: XxQuery，XxPO。XxQuery，查询对象；XxPO，新增的数据对象。
-
-3.3.3.2 output: int。数据库影响的行数。
-
-- - 3.3.4 delete
-
-3.3.4.1 input: XxQuery，查询对象。
-
-3.3.4.2 output: int。数据库影响的行数。
+# 技术框架
+- spring
+- feign
+- dubbo
+- thymeleaf
+- swagger2
+- jackson
+- mybatis
+- tomcat-jdbc
+- lombok

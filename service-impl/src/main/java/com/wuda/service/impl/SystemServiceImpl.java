@@ -1,6 +1,5 @@
 package com.wuda.service.impl;
 
-import com.wuda.common.configuration.CoreProperty;
 import com.wuda.common.lang.response.CommonResultDesc;
 import com.wuda.common.lang.response.Result;
 import com.wuda.dao.mysql.mapper.SystemMapper;
@@ -19,9 +18,6 @@ public class SystemServiceImpl implements SystemService {
 
     @Autowired
     private SystemMapper systemMapper;
-
-    @Autowired
-    private CoreProperty coreProperty;
 
     @Override
     public Result<PingDTO> ping() {

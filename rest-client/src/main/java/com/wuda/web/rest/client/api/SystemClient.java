@@ -19,6 +19,9 @@ public interface SystemClient {
     @RequestLine(HttpMethodConstant.GET + StringConstant.SPACE + PathConstant.REST_SYSTEM_CONTROLLER_PING)
     Result<PingResponse> ping();
 
+    @RequestLine(HttpMethodConstant.GET + StringConstant.SPACE + PathConstant.REST_SYSTEM_CONTROLLER_PING_MYSQL)
+    Result<PingResponse> pingMysql();
+
     /**
      * 创建feign client,并且连接.
      *

@@ -1,6 +1,6 @@
 package com.wuda.web.mvc;
 
-import com.wuda.web.mvc.conf.Swagger2Configuration;
+import com.wuda.common.configuration.Swagger2Configuration;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

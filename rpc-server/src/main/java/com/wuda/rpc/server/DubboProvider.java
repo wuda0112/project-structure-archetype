@@ -19,7 +19,7 @@ import java.io.IOException;
 @EnableAutoConfiguration
 @SpringBootApplication
 @ComponentScan("com.wuda")
-@MapperScan("com.wuda.dao.mapper")
+@MapperScan("com.wuda.dao.mysql.mapper")
 @ImportResource("classpath:dubbo-demo-provider.xml")
 public class DubboProvider {
 

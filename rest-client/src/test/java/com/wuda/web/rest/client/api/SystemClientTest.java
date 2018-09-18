@@ -17,4 +17,11 @@ public class SystemClientTest {
         Result<PingResponse> result = client.ping();
         System.out.println(result);
     }
+
+    @Test
+    public void pingMysql() {
+        SystemClient client = SystemClient.connect();
+        Result<PingResponse> result = client.pingMysql();
+        System.out.println(result);
+    }
 }

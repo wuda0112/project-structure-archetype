@@ -19,8 +19,11 @@ public class DubboConsumer {
         // obtain proxy object for remote invocation
         SystemService systemService = (SystemService) context.getBean("systemService");
         // execute remote invocation
-        Result<PingDTO> pingDTOResult = systemService.ping();
+        Result<PingDTO> pingResult = systemService.ping();
         // show the result
-        System.out.println(pingDTOResult);
+        System.out.println(pingResult);
+
+        Result<PingDTO> pingMysqlResult = systemService.pingMysql();
+        System.out.println(pingMysqlResult);
     }
 }
