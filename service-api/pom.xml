@@ -19,6 +19,12 @@
             <artifactId>service-model</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.wuda</groupId>
+            <artifactId>common-lang</artifactId>
+        </dependency>
+
     </dependencies>
 
 

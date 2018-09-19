@@ -18,6 +18,11 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.wuda</groupId>
+            <artifactId>common-lang</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.netflix.feign</groupId>
             <artifactId>feign-core</artifactId>
             <version>${feign.version}</version>
@@ -42,11 +47,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
         </dependency>
 
     </dependencies>

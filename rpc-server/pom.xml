@@ -15,20 +15,56 @@
 
     <dependencies>
 
+        <!-- 自有项目group-->
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>service-impl</artifactId>
+            <groupId>com.wuda</groupId>
+            <artifactId>common-configuration</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wuda</groupId>
+            <artifactId>service-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>service-impl</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- spring boot group-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+
+        <!--spring cloud group-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+
+        <!--others-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
         </dependency>
 
     </dependencies>
