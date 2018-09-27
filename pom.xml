@@ -14,7 +14,7 @@
     <groupId>com.wuda</groupId>
     <artifactId>project-structure-archetype</artifactId>
     <packaging>pom</packaging>
-    <version>2.1.0</version>
+    <version>2.2.0</version>
     <description>定义一种组织项目结构的样例.可以同时按照RESTful,MVC,RPC方式运行.</description>
 
     <modules>
@@ -56,7 +56,47 @@
     </dependencies>
 
     <dependencyManagement>
+
         <dependencies>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>common-lang</artifactId>
+                <version>${project-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>common-configuration</artifactId>
+                <version>${project-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>service-impl</artifactId>
+                <version>${project.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>lang</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>service-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>service-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>web-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- Dubbo -->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -102,17 +142,6 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>common-lang</artifactId>
-                <version>${project-common.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>common-configuration</artifactId>
-                <version>${project-common.version}</version>
             </dependency>
 
             <dependency>

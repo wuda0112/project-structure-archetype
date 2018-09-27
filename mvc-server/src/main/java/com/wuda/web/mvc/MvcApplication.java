@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Import;
  * @author wuda
  */
 @SpringBootApplication
-@EnableAutoConfiguration
 @Import({Swagger2Configuration.class})
 @ComponentScan(basePackages = "com.wuda")
 @MapperScan(basePackages = "com.wuda.dao.**.mapper")
