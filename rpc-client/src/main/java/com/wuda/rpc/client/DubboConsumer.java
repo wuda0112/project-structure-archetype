@@ -1,29 +1,26 @@
 package com.wuda.rpc.client;
 
-import com.wuda.common.lang.response.Result;
-import com.wuda.service.api.SystemService;
-import com.wuda.service.model.PingDTO;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
+import com.wuda.common.configuration.Swagger2Configuration;
+import com.wuda.rpc.client.conf.DubboConfiguration;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Import;
 
 /**
  * 例子来自于dubbo官网.
  *
  * @author wuda
  */
+@SpringBootApplication
+@Import({Swagger2Configuration.class, DubboConfiguration.class})
+@ComponentScan("com.wuda")
+@DubboComponentScan(basePackages = "com.wuda.rpc.client.service")
 public class DubboConsumer {
 
-    public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[]{"dubbo-demo-consumer.xml"});
-        context.start();
-        // obtain proxy object for remote invocation
-        SystemService systemService = (SystemService) context.getBean("systemService");
-        // execute remote invocation
-        Result<PingDTO> pingResult = systemService.ping();
-        // show the result
-        System.out.println(pingResult);
-
-        Result<PingDTO> pingMysqlResult = systemService.pingMysql();
-        System.out.println(pingMysqlResult);
+    public static void main(String[] args) {
+        SpringApplication.run(DubboConsumer.class, args);
     }
 }

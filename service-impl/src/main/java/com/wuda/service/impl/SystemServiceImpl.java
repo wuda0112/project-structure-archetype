@@ -11,10 +11,9 @@ import org.springframework.stereotype.Service;
 /**
  * @author wuda
  */
-@Service(value = SystemServiceImpl.BEAN_NAME)
+@Service
+@com.alibaba.dubbo.config.annotation.Service
 public class SystemServiceImpl implements SystemService {
-
-    public final static String BEAN_NAME = "systemService";
 
     @Autowired
     private SystemMapper systemMapper;
