@@ -11,6 +11,7 @@
 git clone https://github.com/wuda0112/project-common.git
 ```
 然后 maven clean install
+
 2. 下载本项目
 ```
 git clone https://github.com/wuda0112/project-structure-archetype.git
