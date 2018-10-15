@@ -13,5 +13,13 @@
 
     <description>项目中基础类.</description>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
