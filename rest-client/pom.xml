@@ -11,10 +11,6 @@
 
     <artifactId>rest-client</artifactId>
 
-    <properties>
-        <feign.version>8.18.0</feign.version>
-    </properties>
-
     <dependencies>
 
         <dependency>
@@ -23,19 +19,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.netflix.feign</groupId>
-            <artifactId>feign-core</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.netflix.feign</groupId>
-            <artifactId>feign-jackson</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.netflix.feign</groupId>
-            <artifactId>feign-httpclient</artifactId>
-            <version>${feign.version}</version>
+            <groupId>com.wuda</groupId>
+            <artifactId>common-configuration</artifactId>
         </dependency>
 
         <dependency>
@@ -48,12 +33,42 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
