@@ -77,6 +77,11 @@
                 <artifactId>common-configuration</artifactId>
                 <version>${project-common.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.wuda</groupId>
+                <artifactId>admin-dashboard</artifactId>
+                <version>${project-common.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>${project.groupId}</groupId>

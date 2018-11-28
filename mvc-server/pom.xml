@@ -23,6 +23,11 @@
 
         <dependency>
             <groupId>com.wuda</groupId>
+            <artifactId>admin-dashboard</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.wuda</groupId>
             <artifactId>service-api</artifactId>
         </dependency>
 
