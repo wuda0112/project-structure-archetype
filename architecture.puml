@@ -9,15 +9,10 @@ actor browser
 agent server [
     web server
 ]
-agent rpc_client [
-    rpc client
-]
+
 database db
 queue queue
 cloud foo  {
-    artifact rpc_server [
-        rpc server
-    ]
     artifact RESTful
     artifact mvc
 }
@@ -36,10 +31,8 @@ android -- server
 apple -- server
 browser -- server
 server -- mvc : request/response
-rpc_client -- rpc_server : param/DTO
 server -- RESTful : request/response
 RESTful_client -- RESTful
-rpc_server -- service_api : DTO
 RESTful -- service_api : DTO
 mvc -- service_api : DTO
 service_api -- service_impl

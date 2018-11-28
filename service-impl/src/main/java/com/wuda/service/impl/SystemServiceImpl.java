@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
  * @author wuda
  */
 @Service
-@com.alibaba.dubbo.config.annotation.Service
 public class SystemServiceImpl implements SystemService {
 
     @Autowired

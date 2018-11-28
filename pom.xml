@@ -14,7 +14,7 @@
     <artifactId>project-structure-archetype</artifactId>
     <packaging>pom</packaging>
     <version>2.2.0</version>
-    <description>定义一种组织项目结构的样例.可以同时按照RESTful,MVC,RPC方式运行.</description>
+    <description>定义一种组织项目结构的样例.可以同时按照RESTful,MVC.</description>
 
     <modules>
         <module>service-impl</module>
@@ -22,8 +22,6 @@
         <module>mvc-server</module>
         <module>dao-mysql</module>
         <module>service-api</module>
-        <module>rpc-server</module>
-        <module>rpc-client</module>
         <module>service-model</module>
         <module>rest-server</module>
         <module>web-model</module>

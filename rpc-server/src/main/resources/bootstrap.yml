@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: rpc-server
-server:
-  port: 8083
